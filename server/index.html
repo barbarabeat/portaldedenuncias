@@ -3,13 +3,78 @@
     <head>
         <meta charset="utf-8">
         <title>Portal de Denúncias</title>
+        <script>
+            function pegarValores(){
+                var denunciaAnonima = document.getElementById("anonima").value;
+                var denunciaAssinada = document.getElementById("assinada").value;
+
+            }
+
+            function mostrarEscolha(denunciaAnonima, denunciaAssinada){
+                if(denunciaAnonima == "op1"){
+                    ('formAnonima').show():
+                    ('formAssinada').hide();
+                } else{
+                    ('formAnonima').hide():
+                    ('formAssinada').show();
+                }
+            }
+        </script>
     </head>
     <body>
         <h1>Portal de Denúncias BSI</h1>
         <h2>Deseja fazer a denúncia anonimamente ou assinada?</h2>
+
         <div>
             <label for="anonima"><input type="radio" name="opcao" id="anonima" value="op1">Anônima</label>
+        </div>
+
+        <div>
             <label for="assinada"><input type="radio" name="opcao" id="assinada" value="op2">Assinada</label>
+        </div>
+
+        <div  id="formAnonima">
+            <form method="post" enctype="multipart/form-data">
+                <h2>Denúncia Anônima</h2>
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="userEmail">
+                </div>
+                <div>
+                    <label for="msg">Mensagem:</label>
+                    <textarea id="msg" name="userMsg"></textarea>
+                </div>
+                <div>
+                    <input type="file" name="myFile">
+                </div>
+                <div class="button">
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+
+        <div  id="formAssinada">
+            <form method="post" enctype="multipart/form-data">
+                <h2>Denúncia Assinada</h2>
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="name" name="userName"> 
+                </div>
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="userEmail">
+                </div>
+                <div>
+                    <label for="msg">Mensagem:</label>
+                    <textarea id="msg" name="userMsg"></textarea>
+                </div>
+                <div>
+                    <input type="file" name="myFile">
+                </div>
+                <div class="button">
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
         </div>
     </body>
 </html>
