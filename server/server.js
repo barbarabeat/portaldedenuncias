@@ -9,7 +9,7 @@ app.get('/', function(req, res) {
 });
 
 app.post('/', function(req, res) {
-    
+   res.send(); 
 })
 
 app.listen(port,() => console.log('Portal de Denúncias aberto na porta:' + port));
